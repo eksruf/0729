@@ -17,11 +17,17 @@
 	<th>아이디</th> <th>비밀번호</th> <th>주소</th> 
 </tr>
 
-<c:if test="">
+<c:if test="${list.size == 0 }">
 	 <tr>
 		 <td colspan="3"> 데이터 없음</td>
 	 </tr>
 </c:if>
+<c:forEach var="dto" items="${list }">
+<tr>
+<td>${dto.getId() }</td>  <td></td>  <td></td> 
+</tr>
+</c:forEach>
+
 
 </table>
 </div>

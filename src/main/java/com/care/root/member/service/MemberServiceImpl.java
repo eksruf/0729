@@ -26,10 +26,8 @@ public class MemberServiceImpl implements MemberService{
 		return 1;
 	}
 	
-	public ArrayList<MemberDTO> list() {
-		ArrayList<MemberDTO> list = new ArrayList<MemberDTO>();
-		
-		list = mapper.list();
+	public ArrayList<MemberDTO> list(MemberDTO dto) {
+		ArrayList<MemberDTO> list = mapper.list();
 		
 		return list;
 	}

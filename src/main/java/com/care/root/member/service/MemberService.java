@@ -8,5 +8,5 @@ import com.care.root.member.dto.MemberDTO;
 
 public interface MemberService {
 	public int user_check(HttpServletRequest request);
-	public ArrayList<MemberDTO> list();
+	public ArrayList<MemberDTO> list(MemberDTO dto);
 }

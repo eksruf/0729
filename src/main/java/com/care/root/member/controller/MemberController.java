@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -54,15 +55,8 @@ public class MemberController implements SessionName {
 	}
 	
 	@GetMapping("/memberInfo")
-	public String memberInfo() {
-		ArrayList<MemberDTO> list = ms.list();
-		
-		MemberDTO dto = new MemberDTO();
-		dto.setId("id");
-		dto.setAddr("addr");
-		dto.setPw("pw");
-		
-		list.add(dto);
+	public String list(MemberDTO dto, Model model) {
+		model.addAttribute("list",ms.list(dto));
 		return "member/memberInfo";
 	}
 	
